@@ -44,7 +44,7 @@ parameters:
   git-repo:
     type: string
     description: Public git repo url
-    default: "https://github.com/metral/corekube.git"
+    default: "https://github.com/darkgaro/corekube.git"
   git-branch:
     type: string
     description: Git repo branch
