@@ -15,7 +15,7 @@ parameters:
   kubernetes-minion-count:
     description: Number of CoreOS machines to deploy as Kubernetes Minion
     type: number
-    default: 3
+    default: 2
     constraints:
     - range:
         min: 2
@@ -66,7 +66,7 @@ resources:
     properties:
       key_name: { get_param: key-name }
       image: { get_param: coreos-image }
-      flavor: { get_param: flavor }
+      flavor: "512MB Standard Instance"
       name: "discovery"
       user_data_format: RAW
       config_drive: "true"
@@ -94,7 +94,7 @@ resources:
     properties:
       key_name: { get_param: key-name }
       image: { get_param: coreos-image }
-      flavor: { get_param: flavor }
+      flavor: "512MB Standard Instance"
       name: "overlord"
       user_data_format: RAW
       config_drive: "true"
@@ -180,7 +180,7 @@ resources:
         properties:
           key_name: { get_param: key-name }
           image: { get_param: coreos-image }
-          flavor: { get_param: flavor }
+          flavor: "2 GB Performance"
           name: kubernetes-master-%index%
           networks:
           - uuid: "00000000-0000-0000-0000-000000000000"
@@ -284,7 +284,7 @@ resources:
         properties:
           key_name: { get_param: key-name }
           image: { get_param: coreos-image }
-          flavor: { get_param: flavor }
+          flavor: "8 GB Performance"
           name: kubernetes-minion-%index%
           networks:
           - uuid: "00000000-0000-0000-0000-000000000000"

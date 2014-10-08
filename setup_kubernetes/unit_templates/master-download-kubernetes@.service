@@ -9,10 +9,10 @@ Documentation=https://github.com/GoogleCloudPlatform/kubernetes
 Requires=network-online.target
 
 [Service]
-ExecStart=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/kubernetes/apiserver
-ExecStart=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/kubernetes/controller-manager
-ExecStart=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/kubernetes/kubecfg
-ExecStart=/usr/bin/wget -N -P /opt/bin http://storage.googleapis.com/kubernetes/scheduler
+ExecStart=/usr/bin/wget -N -P /opt/bin https://github.com/darkgaro/kubernetes-binaries/raw/master/apiserver
+ExecStart=/usr/bin/wget -N -P /opt/bin https://github.com/darkgaro/kubernetes-binaries/raw/master/controller-manager
+ExecStart=/usr/bin/wget -N -P /opt/bin https://github.com/darkgaro/kubernetes-binaries/raw/master/kubecfg
+ExecStart=/usr/bin/wget -N -P /opt/bin https://github.com/darkgaro/kubernetes-binaries/raw/master/scheduler
 ExecStart=/usr/bin/chmod +x /opt/bin/apiserver
 ExecStart=/usr/bin/chmod +x /opt/bin/controller-manager
 ExecStart=/usr/bin/chmod +x /opt/bin/scheduler
